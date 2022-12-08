@@ -71,9 +71,9 @@ module.exports = {
         ...search(req.query.search),
         ...filter('categoryId', req.query.category)
       },
-      // include: {
-      //   model: ProductImage
-      // },
+      include: {
+        model: ProductImage
+      },
       ...getPagination(req.query.page),
       ...getSort(req.query.title, req.query.type)
     }

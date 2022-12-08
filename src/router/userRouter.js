@@ -190,7 +190,7 @@ Route.route('/')
  *          content: 
  *              application/json:
  *                  schema:
- *                      $ref: '#/components/schemas/ResponseSuccess'
+ *                      $ref: '#/components/schemas/User'
  *                      
  *      parameters: 
  *        - in: path
@@ -205,6 +205,12 @@ Route.route('/')
  *              content:
  *                  application/json:
  *                      schema:         
+ *                          $ref: '#/components/schemas/ResponseSuccess'
+ *          '400':
+ *              description: bad request
+ *              content:
+ *                  application/json:
+ *                      schema:
  *                          $ref: '#/components/schemas/ResponseFail'
  */
 module.exports = Route;
