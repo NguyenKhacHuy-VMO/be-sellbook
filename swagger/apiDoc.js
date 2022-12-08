@@ -20,7 +20,8 @@ const option = {
         path.join(__dirname, '../src/router/productRouter.js'),
         path.join(__dirname, '../src/router/voucherRouter.js'),
         path.join(__dirname, '../src/router/orderRouter.js'),
-        path.join(__dirname, '../src/router/authRouter.js')
+        path.join(__dirname, '../src/router/authRouter.js'),
+        path.join(__dirname, '../src/router/commentRouter.js')
     ]
 }
 const swaggerSpec = swaggerJsDoc(option);

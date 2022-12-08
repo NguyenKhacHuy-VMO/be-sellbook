@@ -2,6 +2,7 @@ const { Op } = require('sequelize');
 
 const sequelize = require('../config/connectDB');
 const Product = require('../model/productModel');
+const Comment = require('../model/commentModel');
 const OrderDetail = require('../model/orderDetailModel')
 const ProductImage = require('../model/productImageModel');
 const ErrorResponse = require('../helper/errorResponse');
@@ -72,7 +73,8 @@ module.exports = {
         ...filter('categoryId', req.query.category)
       },
       include: {
-        model: ProductImage
+        model: ProductImage,
+        model: Comment
       },
       ...getPagination(req.query.page),
       ...getSort(req.query.title, req.query.type)
@@ -102,7 +104,7 @@ module.exports = {
     const condition = {
       where: {
         id: id,
-        // isDeleted: DEFAULT_VALUE.IS_NOT_DELETED,
+        isDeleted: DEFAULT_VALUE.IS_NOT_DELETED,
       },
       include: {
         model: ProductImage
